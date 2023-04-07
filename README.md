@@ -1,1 +1,1 @@
-# llm_demo
+# StreamlitとLangChainを使ったコーチングAIのデモ
