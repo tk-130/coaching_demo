@@ -30,7 +30,9 @@ def create_prompt() -> str:
           ・気になっていることや心のわだかまりをコーチに話すことで、心身のストレスが減る \
           ・コーチと約束することにより、怠け心を克服することができる \
           ・感情が最大限尊重されるので、心から受け入れられている安心感を得られる \
-          分かったらまず、クライアントであるユーザに質問をしてください。'
+          制約条件： \
+          ・1回のやりとりにつき、質問は1件とすること \
+          '
   prompt = ChatPromptTemplate.from_messages([
       SystemMessagePromptTemplate.from_template(system_message),
       MessagesPlaceholder(variable_name='history'),
@@ -68,8 +70,8 @@ def main():
       st.session_state.past = []
 
   with st.form('ガイオ専任コーチに相談する', clear_on_submit=True):
-    user_message = st.text_area(label='相談内容を入力してください', value='')
-    submitted = st.form_submit_button('相談する')
+    user_message = st.text_area(label='あなたの悩みごとを入力してください', value='')
+    submitted = st.form_submit_button('会話する')
     if submitted:
       conversation = load_conversation()
       answer = conversation.predict(input=user_message)
