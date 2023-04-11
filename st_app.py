@@ -108,7 +108,7 @@ class CoachingDemo:
             memory=memory,
             prompt=self.create_prompt(),
             llm=llm,
-            verbose=True
+            verbose=False
         )
         return conversation
 
