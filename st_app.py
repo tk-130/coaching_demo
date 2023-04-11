@@ -179,9 +179,9 @@ class CoachingDemo:
 
         if st.session_state['generated']:
             for i in range(len(st.session_state.generated) - 1, -1, -1):
-                message(st.session_state.generated[i], key=str(i))
+                message(st.session_state.generated[i], key=str(i), avatar_style='bottts-neutral', seed='Aneka')
                 message(st.session_state.past[i],
-                        is_user=True, key=str(i) + '_user')
+                        is_user=True, key=str(i) + '_user', avatar_style='pixel-art', seed='Aneka')
 
 
 if __name__ == '__main__':
