@@ -20,7 +20,7 @@ from langchain.prompts.chat import (
     HumanMessagePromptTemplate,
     MessagesPlaceholder,
 )
-from langchain.memory import ConversationBufferMemory
+from langchain.memory import ConversationBufferMemory, ConversationBufferWindowMemory
 from langchain.chains import ConversationChain
 from langchain.callbacks.base import CallbackManager
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
@@ -103,7 +103,7 @@ class CoachingDemo:
             ]),
             verbose=False
         )
-        memory = ConversationBufferMemory(return_messages=True)
+        memory = ConversationBufferWindowMemory(return_messages=True, k=8)
         conversation = ConversationChain(
             memory=memory,
             prompt=self.create_prompt(),
