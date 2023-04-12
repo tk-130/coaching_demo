@@ -148,7 +148,7 @@ class CoachingDemo:
         タイトル、フォーム等を描画し、ユーザ操作に関連した処理を呼び出す
 
         '''        
-        st.title('コーチさん')
+        st.title('AIコーチさん')
 
         if 'generated' not in st.session_state:
             st.session_state.generated = []
