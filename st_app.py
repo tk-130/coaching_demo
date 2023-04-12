@@ -103,7 +103,7 @@ class CoachingDemo:
             ]),
             verbose=False
         )
-        memory = ConversationBufferWindowMemory(return_messages=True, k=6)
+        memory = ConversationBufferWindowMemory(return_messages=True, k=8)
         conversation = ConversationChain(
             memory=memory,
             prompt=self.create_prompt(),
