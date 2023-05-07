@@ -43,6 +43,7 @@ class CoachingDemo:
         環境変数に設定されたOpenAIのAPIキーを設定する
         '''
         openai.api_key = os.environ['OPENAI_API_KEY']
+        st.set_page_config(initial_sidebar_state='collapsed')
 
     def create_prompt(self) -> str:
         ''' プロンプト作成処理
