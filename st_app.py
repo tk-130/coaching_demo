@@ -97,7 +97,8 @@ class CoachingDemo:
         '''
         llm = ChatOpenAI(
             **kwargs,
-            model_name='gpt-3.5-turbo',
+            #model_name='gpt-3.5-turbo',
+            model_name='gpt-4',
             streaming=True,
             callback_manager=CallbackManager([
                 StreamlitCallbackHandler(),
